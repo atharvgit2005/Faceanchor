@@ -2,8 +2,10 @@
 out/
 __pycache__/
 *.pyc
-venv/
+venv
+.venv
 .venv/
+venv/
 node_modules/
 *.h5
 *.onnx
