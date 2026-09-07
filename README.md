@@ -16,7 +16,7 @@ Proof-of-Presence: verify that a photo of you appears in a social post, then anc
 
 ```
                            [ Input Reference Photo ]
-                               (samples/me.jpg)
+                               (samples/sample.jpg)
                                        │
                                        ▼
               ┌──────────────────────────────────────────────────┐

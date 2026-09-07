@@ -26,7 +26,7 @@ preflight:
 	$(PYTHON) scripts/preflight.py
 
 demo:
-	$(PYTHON) main.py --image samples/me.jpg --consent
+	$(PYTHON) main.py --image samples/sample.jpg --consent
 
 demo-reject:
 	$(PYTHON) main.py --image samples/unindexed.png --consent

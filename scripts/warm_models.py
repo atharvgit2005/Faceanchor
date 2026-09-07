@@ -11,7 +11,9 @@ from rich.panel import Panel
 console = Console()
 
 
-def warm_models(sample_path: str = "samples/me.jpg") -> None:
+def warm_models(sample_path: str = "samples/sample.jpg") -> None:
+    if not os.path.exists(sample_path) and os.path.exists("samples/me.jpg"):
+        sample_path = "samples/me.jpg"
     if not os.path.exists(sample_path):
         console.print(f"[bold red]Error:[/bold red] Sample image not found at {sample_path}")
         sys.exit(1)

@@ -28,10 +28,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="FaceAnchor: Verify social media presence and anchor cryptographic evidence to Polygon."
     )
+    default_img = "samples/sample.jpg" if Path("samples/sample.jpg").exists() else "samples/me.jpg"
     parser.add_argument(
         "--image",
-        default="samples/me.jpg",
-        help="Path to the local reference photo of yourself (default: samples/me.jpg)",
+        default=default_img,
+        help=f"Path to the local reference photo of yourself (default: {default_img})",
     )
     parser.add_argument(
         "--image-url",
@@ -84,10 +85,10 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    # Resolve image_url for non-default input images if pointing to default me.jpg
-    if args.image and args.image != "samples/me.jpg":
+    # Resolve image_url for non-default input images if pointing to default sample image
+    if args.image and args.image not in ("samples/sample.jpg", "samples/me.jpg"):
         img_name = Path(args.image).name
-        if not args.image_url or "samples/me.jpg" in args.image_url:
+        if not args.image_url or "samples/sample.jpg" in args.image_url or "samples/me.jpg" in args.image_url:
             base_url = os.getenv("IMAGE_BASE_URL", "https://raw.githubusercontent.com/atharvgit2005/Faceanchor/main/samples")
             args.image_url = f"{base_url.rstrip('/')}/{img_name}"
 
