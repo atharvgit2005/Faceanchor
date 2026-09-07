@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "/Users/atharvpaharia100/Desktop/Projects/HHG/.venv/bin/python",
+  "python.pythonPath": "/Users/atharvpaharia100/Desktop/Projects/HHG/.venv/bin/python",
+  "python.venvPath": "/Users/atharvpaharia100/Desktop/Projects/HHG",
+  "python.analysis.extraPaths": [
+    "/Users/atharvpaharia100/Desktop/Projects/HHG",
+    "/Users/atharvpaharia100/Desktop/Projects/HHG/.venv/lib/python3.11/site-packages"
+  ]
+}

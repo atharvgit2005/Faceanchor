@@ -1,0 +1,12 @@
+{
+  "venvPath": "/Users/atharvpaharia100/Desktop/Projects/HHG",
+  "venv": ".venv",
+  "extraPaths": [
+    "/Users/atharvpaharia100/Desktop/Projects/HHG",
+    "/Users/atharvpaharia100/Desktop/Projects/HHG/.venv/lib/python3.11/site-packages"
+  ],
+  "include": [
+    "pipeline",
+    "scripts"
+  ]
+}
