@@ -188,10 +188,13 @@ def pick_match(ranked: list[dict[str, Any]], threshold: float = 0.35) -> Optiona
         dist_str = f"{c['distance']:.4f}" if c.get("distance") is not None else "-"
         adj_str = f"{c['adjusted']:.4f}" if c.get("adjusted") is not None else "-"
 
-        if winner is not None and c.get("link") == winner.get("link"):
-            verdict = "[bold green]MATCH (WINNER)[/bold green]"
+        if c.get("adjusted") is not None and c["adjusted"] <= threshold:
+            if winner is not None and c.get("link") == winner.get("link"):
+                verdict = "[bold green]MATCH (WINNER)[/bold green]"
+            else:
+                verdict = "[bold green]MATCH[/bold green]"
         elif c.get("adjusted") is not None and c["adjusted"] <= (threshold * 1.3):
-            verdict = "[yellow]near[/yellow]"
+            verdict = "[bold yellow]WEAK[/bold yellow]"
         else:
             verdict = "[dim]no[/dim]"
 
