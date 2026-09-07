@@ -26,7 +26,7 @@ preflight:
 	$(PYTHON) scripts/preflight.py
 
 demo:
-	$(PYTHON) main.py --image samples/sample.jpg --consent
+	$(PYTHON) main.py --image samples/image.png --consent --expect-domain instagram.com
 
 demo-reject:
 	$(PYTHON) main.py --image samples/unindexed.png --consent
