@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
     record_file = Path("out/record.json")
     if not record_file.exists():
-        console.print("[bold red]out/record.json not found. Run Prompt 5 first.[/bold red]")
+        console.print("[bold red]out/record.json not found. Please run the evidence packaging step first (pipeline.evidence).[/bold red]")
         sys.exit(1)
 
     with open(record_file) as f:
@@ -266,4 +266,4 @@ if __name__ == "__main__":
     res2 = attest(ev_hash, img_hash, ph_hash, post_url, out_dir="out")
     assert res2["status"] == "already_anchored", f"Expected already_anchored, got {res2['status']}"
     console.print("[bold green]✓ Second run successfully detected 'already anchored' without sending a tx![/bold green]")
-    console.print("[bold green]✓ Prompt 7 Definition of Done satisfied![/bold green]")
+    console.print("[bold green]✓ Blockchain attestation client verification complete.[/bold green]")

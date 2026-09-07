@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
     sample_img = "samples/me.jpg"
     test_out = "out"
-    console.print(f"[bold cyan]Running Face Encoding DoD on {sample_img}...[/bold cyan]")
+    console.print(f"[bold cyan]Running Face Encoding self-test on {sample_img}...[/bold cyan]")
 
     result = encode_face(sample_img, test_out)
 
@@ -187,4 +187,4 @@ if __name__ == "__main__":
         "[bold cyan]Biometrics Status:[/bold cyan] Raw embeddings saved ONLY locally in out/face.json. On-chain record will store only the commitment hash.",
         title="Privacy & Integrity Verified"
     ))
-    console.print("[bold green]✓ Prompt 2 Definition of Done satisfied![/bold green]")
+    console.print("[bold green]✓ Face detection & commitment verification complete.[/bold green]")

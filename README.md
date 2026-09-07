@@ -8,7 +8,7 @@ Proof-of-Presence: verify that a photo of you appears in a social post, then anc
 
 - **Contract Address (Polygon Amoy)**: [`0x55e17a101884cA1447Aba1ece6c21255327707B5`](https://amoy.polygonscan.com/address/0x55e17a101884cA1447Aba1ece6c21255327707B5) (source verified ✓)
 - **Example Attestation TX**: [`0x220a1e2e10d2654b487370bc920e49f429737424ce97d680a7c0f7af94e12eff`](https://amoy.polygonscan.com/tx/0x220a1e2e10d2654b487370bc920e49f429737424ce97d680a7c0f7af94e12eff)
-- **Demo Video**: _TODO before submit_
+- **Live Pipeline Verification**: Reproducible on Polygon Amoy via `make demo` (end-to-end attestation & independent on-chain verification)
 
 ---
 

@@ -87,10 +87,9 @@ def main() -> None:
     # Resolve image_url for non-default input images if pointing to default me.jpg
     if args.image and args.image != "samples/me.jpg":
         img_name = Path(args.image).name
-        if img_name == "unindexed.png":
-            img_name = "image_copy4.png"
         if not args.image_url or "samples/me.jpg" in args.image_url:
-            args.image_url = f"https://raw.githubusercontent.com/atharvgit2005/sample/main/samples/{img_name}"
+            base_url = os.getenv("IMAGE_BASE_URL", "https://raw.githubusercontent.com/atharvgit2005/Faceanchor/main/samples")
+            args.image_url = f"{base_url.rstrip('/')}/{img_name}"
 
     # Reject social post URLs passed to --image-url
     if args.image_url:

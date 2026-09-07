@@ -117,9 +117,9 @@ if __name__ == "__main__":
     recompressed_path = out_dir / "recompressed.jpg"
 
     if not sample_path.exists():
-        console.print("[yellow]samples/me.jpg not found. Generating a synthetic portrait for DoD test...[/yellow]")
+        console.print("[yellow]samples/me.jpg not found. Generating a temporary test portrait for self-test...[/yellow]")
         sample_path.parent.mkdir(parents=True, exist_ok=True)
-        # Create a sample synthetic gradient portrait with features
+        # Create a sample test portrait with visual features
         test_img = Image.new("RGB", (400, 500), color=(220, 230, 242))
         draw = ImageDraw.Draw(test_img)
         # Head / face oval
@@ -134,7 +134,7 @@ if __name__ == "__main__":
         # Shoulders
         draw.polygon([(50, 500), (350, 500), (320, 400), (80, 400)], fill=(40, 70, 120))
         test_img.save(str(sample_path), format="JPEG", quality=95)
-        console.print(f"[green]Saved sample synthetic image to {sample_path}[/green]")
+        console.print(f"[green]Saved sample test image to {sample_path}[/green]")
 
     # Normalize sample first
     norm_sample = normalize_image(sample_path, out_dir / "normalized_me.jpg")
@@ -172,4 +172,4 @@ if __name__ == "__main__":
 
     assert sha_different, "Expected SHA-256 to differ under recompression"
     assert phash_close, f"Expected pHash distance < 6, got {distance}"
-    console.print("[bold green]✓ Prompt 1 Definition of Done satisfied![/bold green]")
+    console.print("[bold green]✓ Imaging module verification complete.[/bold green]")

@@ -256,7 +256,7 @@ if __name__ == "__main__":
     has_social = any(c["is_social"] for c in candidates)
     if has_social:
         console.print("[bold green]✓ At least one social media match found in candidates![/bold green]")
-        console.print("[bold green]✓ Prompt 3 Definition of Done satisfied![/bold green]")
+        console.print("[bold green]✓ Reverse search verification complete.[/bold green]")
         sys.exit(0)
     else:
         console.print(

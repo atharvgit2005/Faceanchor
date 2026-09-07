@@ -110,7 +110,7 @@ if __name__ == "__main__":
     sample_img = "samples/me.jpg"
 
     if not face_file.exists() or not match_file.exists():
-        console.print("[bold red]Missing out/face.json or out/match.json. Run Prompts 2 and 4 first.[/bold red]")
+        console.print("[bold red]Missing out/face.json or out/match.json. Please run face detection and match ranking first.[/bold red]")
         sys.exit(1)
 
     with open(face_file) as f:
@@ -157,4 +157,4 @@ if __name__ == "__main__":
         "Saved canonical record to out/record.json",
         title="Determinism & Integrity Proof"
     ))
-    console.print("[bold green]✓ Prompt 5 Definition of Done satisfied![/bold green]")
+    console.print("[bold green]✓ Evidence packaging verification complete.[/bold green]")

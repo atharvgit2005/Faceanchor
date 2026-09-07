@@ -218,7 +218,7 @@ if __name__ == "__main__":
     cands_file = out_dir / "candidates.json"
 
     if not face_file.exists():
-        console.print("[bold red]out/face.json does not exist. Run Prompt 2 first.[/bold red]")
+        console.print("[bold red]out/face.json does not exist. Please run face detection first (pipeline.face).[/bold red]")
         sys.exit(1)
 
     with open(face_file) as f:
@@ -227,9 +227,9 @@ if __name__ == "__main__":
 
     threshold = float(os.getenv("FACE_THRESHOLD", "0.35"))
 
-    # If candidates.json does not exist, create a sample candidate dataset for DoD testing
+    # If candidates.json does not exist, initialize a sample candidate dataset for self-testing
     if not cands_file.exists():
-        console.print("[yellow]out/candidates.json not found. Creating a synthetic candidate set for DoD verification...[/yellow]")
+        console.print("[yellow]out/candidates.json not found. Initializing mock candidate set for verification...[/yellow]")
         test_cands = [
             {
                 "title": "My Public Post on X",
@@ -294,7 +294,7 @@ if __name__ == "__main__":
             f"Saved match record to [bold white]out/match.json[/bold white]",
             title="Match Confirmed"
         ))
-        console.print("[bold green]✓ Prompt 4 Definition of Done satisfied![/bold green]")
+        console.print("[bold green]✓ Match ranking verification complete.[/bold green]")
         sys.exit(0)
     else:
         best_dist = None
